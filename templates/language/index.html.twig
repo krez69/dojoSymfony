@@ -7,12 +7,17 @@
      {% for language in languages %}
      <li>
          {{ language.name }}
+         <ul>
          {% for framework in language.frameworks %}
-             {{ framework.name }}
-             {% for type in framework.types %}
-                 {{ type.name }}
-             {% endfor %}
+            <li>{{ framework.name }}
+                <ul>
+                    {% for type in framework.types %}
+                        <li>{{ type.name }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
          {% endfor %}
+         </ul>
      </li>
      {% endfor %}
  </ul>
