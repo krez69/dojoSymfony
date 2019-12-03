@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LanguageController!{% endblock %}
+
+{% block body %}
+ <ul>
+     {% for language in languages %}
+     <li>
+         {{ language.name }}
+         {% for framework in language.frameworks %}
+             {{ framework.name }}
+             {% for type in framework.types %}
+                 {{ type.name }}
+             {% endfor %}
+         {% endfor %}
+     </li>
+     {% endfor %}
+ </ul>
+
+
+{% endblock %}
