@@ -6,7 +6,7 @@
  <ul>
      {% for language in languages %}
      <li>
-         {{ language.name }}
+         <a href="{{ path('language_show', {'id': language.id } ) }}">{{ language.name }}</a>
          <ul>
          {% for framework in language.frameworks %}
             <li>{{ framework.name }}

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LanguageController!{% endblock %}
+
+{% block body %}
+    <ul>
+        <li>{{ language.name }}
+            <ul>
+                {% for framework in language.frameworks %}
+                    <li>{{ framework.name }}
+                        <ul>
+                            {% for type in framework.types %}
+                                <li>{{ type.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </li>
+        <a href="{{ path('language') }}" style="color: cornflowerblue">Retour à la liste</a>
+    </ul>
+
+
+{% endblock %}
